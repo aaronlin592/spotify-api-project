@@ -6,5 +6,5 @@
 <img [src]="profile_pic" alt="Profile Picture" class="profile">
 <p>
 	<!--TODO: bind link's href to profile_link-->
-	<a class="btn btn-light" [href]="profile_link" target="_blank">Open profile on Spotify</a>	
+	<a class="btn btn-light" [href]="profile_link" target="_blank" *ngIf="profile_link">Open profile on Spotify</a>	
 </p>
