@@ -1,10 +1,10 @@
 <h1>Search Spotify</h1>
 <!--TODO: bind input's model to searchString-->
-<input>
+<input [(ngModel)]="searchString" (keyup.enter)="search()" placeholder="Search">
 <!--TODO: bind select's model to searchCategory-->
 <select>
 	<!--TODO: loop over searchCategories to create dropdown options-->
-	<!--populate body and text value https://www.w3schools.com/tags/att_option_selected.asp-->
+	<!--populate body and text value https://www.w3schools.com/tags/att_option_selected.asp--><input [(ngModel)]="searchString" (keyup.enter)="search()" placeholder="Search...">
 </select>
 <!--TODO: Call search function when the button is clicked-->
 <button class="btn btn-light" (click)="search()">Search</button>
