@@ -25,6 +25,15 @@ export class SearchComponent implements OnInit {
 
   search() {
     //TODO: call search function in spotifyService and parse response
+    if (!this.searchString.trim()) return; // Prevent empty searches
+
+    this.spotifyService.searchFor(this.searchCategory, this.searchString)
+      .then((results: ResourceData[]) => {
+        this.resources = results;
+      })
+      .catch((error) => {
+        console.error("Error searching Spotify:", error);
+      });
   }
 
 }
