@@ -1,19 +1,19 @@
 <h1>Search Spotify</h1>
 <!--TODO: bind input's model to searchString-->
-<input [(ngModel)]="searchString" (keyup.enter)="search()" placeholder="Search">
+<input [(ngModel)]="searchString" placeholder="Search">
 <!--TODO: bind select's model to searchCategory-->
-<select [(ngModel)]="searchCategory">
+<select [(ngModel)]="searchCategory" (change)="resetSearch()">
 	<!--TODO: loop over searchCategories to create dropdown options-->
 	<!--populate body and text value https://www.w3schools.com/tags/att_option_selected.asp-->
-	<option *ngFor="let category of searchCategories" [value]="category">
-		{{ category | titlecase }}
-	</option>
+	<option>artist</option>
+  <option>album</option>
+  <option>track</option>
 </select>
 <!--TODO: Call search function when the button is clicked-->
 <button class="btn btn-light" (click)="search()">Search</button>
 <!--TODO: Display a carousel component if searching for an artist or album. Bind carousel's resources and give it a static carouselId.-->
 <!--TODO: Display a track-list component if searching for a track. Bind track-list's tracks.-->
-<div *ngIf="(searchCategory === 'artist' || searchCategory === 'album') && resources.length > 0">
+<div *ngIf="searchPerformed && (searchCategory === 'artist' || searchCategory === 'album') && resources.length > 0">
   <div id="searchCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 600px;">
     <div class="carousel-inner">
       <div *ngFor="let resource of resources; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <!-- Carousel Controls -->
+    <!-- carousel controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#searchCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -38,4 +38,4 @@
 </div>
 
 <!-- tracks -->
-<app-track-list *ngIf="searchCategory === 'track' && resources.length > 0" [tracks]="resources"></app-track-list>
+<app-track-list *ngIf="searchPerformed && searchCategory === 'track' && resources.length > 0" [tracks]="resources"></app-track-list>
