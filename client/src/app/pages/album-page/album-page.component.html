@@ -2,12 +2,18 @@
 	<div class="row">
 		<div class="col-12 col-sm-6">
 			<!--TODO: populate with album name-->
-			<h1>???</h1>
+			<h1>{{ album.name }}</h1>
 			<!--TODO: set src to album image URL-->
-			<img id="albumImg">
+			<img id="albumImg" src="assets/unknown.jpg">
 			<!--TODO: add thermometer with album's popularity -->
+			<div class="progress mt-3" style="height: 20px;">
+				<div class="progressbar" role="progressbar" [style.width.%]="album.popularity" aria-valuenow="{{ album.popularity }}" aria-valuemin="0" aria-valuemax="100">
+					{{ album.popularity }}%
+				</div>
+			</div>
 			<!--TODO: use @for to loop over album artists-->
 			<p>
+				
 				<!--TODO: link to artist page, display artist name-->
 				Artist: <a>???</a>
 			</p>
@@ -19,6 +25,24 @@
 		<div class="col-12 col-sm-6">
 			<h3>Album Tracks</h3>
 			<!--TODO: display the track list for the album. Hide the artist and album columns because they are redundant on this page.-->
+			<table class="table table-striped table-bordered mt-3">
+				<thead class="table-dark">
+					<tr>
+						<th>#</th>
+						<th>Track Name</th>
+						<th>Duration</th>
+					</tr>
+				</thead>
+				<tbody>
+					@for (track of album.tracks.items; track track.id; let i = $index) {
+						<tr>
+							<td>{{ i + 1 }}</td>
+							<td>{{ track.name }}</td>
+							<td>{{ (track.duration_ms / 60000) | number:'1.2-2' }} min</td>
+						</tr>
+					}
+				</tbody>
+			</table>
 		</div>
 	</div>
 }
