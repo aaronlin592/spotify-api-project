@@ -28,8 +28,8 @@ export class ArtistPageComponent implements OnInit {
         this.artist = artist;
       });
     this.spotifyService.getTopTracksForArtist(this.artistId)
-      .then(tracks => {
-        this.topTracks = tracks;
+      .then(track => {
+        this.topTracks = track;
       });
     this.spotifyService.getAlbumsForArtist(this.artistId)
       .then(albums => {
