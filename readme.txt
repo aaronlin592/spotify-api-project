@@ -2,7 +2,7 @@
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
-*/10
+10/10
 - 1/1 Communicating with the webserver
 - 1/1 Populating information about the user
 - 3/3 Populating the search component
@@ -12,13 +12,16 @@
 
 
 2. How long, in hours, did it take you to complete this assignment?
-This assignment took 60 hours to complete this assigmnent.
+This assignment took 60 hours to complete.
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
+- angular documentation - self-explanatory
 - https://angular.dev/api/core/@for and https://angular.dev/api/common/NgFor - how to naviate displaying and linking multiple artists
 when looping through album artists
 - https://v17.angular.io/guide/property-binding - how to hide the artist and album covers using property binding
+- https://inf133-wi25.depstein.net/resources - for lecture reference and tutorials/notes
+- ChatGPT - for asking about angular and bootstrap carousel explanations 
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
