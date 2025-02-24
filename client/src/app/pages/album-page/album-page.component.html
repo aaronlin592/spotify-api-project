@@ -9,13 +9,17 @@
 				<app-thermometer [popularity]="album.popularity"></app-thermometer>
 			<!--TODO: use @for to loop over album artists-->
 			<p>
-				
-				<!--TODO: link to artist page, display artist name-->
-				Artist: <a>???</a>
+				Artist: 
+				@for (artist of album.artists; track artist.id; let i = $index) {
+					<!--TODO: link to artist page, display artist name-->
+					<a [href]="'/artist/' + artist.id">{{ artist.name }}</a>
+					@if (i < album.artists.length - 1) { , }
+				}
 			</p>
 			<p>
 				<!--TODO: link to album page on spotify, display album name-->
 				<a [href]="album.url" class="btn btn-light" role="button" target="_blank" >Open {{ album.name }} on Spotify</a>
+
 			</p>
 		</div>
 		<div class="col-12 col-sm-6">

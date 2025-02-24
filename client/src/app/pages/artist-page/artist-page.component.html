@@ -4,11 +4,7 @@
 			<!--TODO: populate with artist name-->
 			<h1>{{ artist.name }}</h1>
 			<!--TODO: populate with artist image URL-->
-<<<<<<< HEAD
 			<img id="artistImg" [src] ="artist.imageURL">
-=======
-			<img [id]="artistImg" [src]="artist.imageURL">
->>>>>>> ce1c5929388b1a05e159e89cef9ba74eeb453a6d
 			<p>
 				<!--TODO: link to artist page on spotify, display artist name-->
 				<a [href]="artist.url" class="btn btn-light" role="button" target="_blank">Open {{ artist.name }} on Spotify</a>
@@ -22,12 +18,8 @@
 			<!--TODO: display artist name-->
 			<h3>{{ artist.name }}'s Albums</h3>
 			<!--TODO: Display a carousel component for the artist's albums. Bind carousel's resources and give it a static carouselId.-->
-<<<<<<< HEAD
 			<app-carousel [resources]="artist" [carouselId]="'artist-album-carousel'"></app-carousel>
 
-=======
-			<app-carousel [resources]="artist.albums" [carouselId]="artist-album-carousel"></app-carousel>
->>>>>>> ce1c5929388b1a05e159e89cef9ba74eeb453a6d
 		</div>
 		<div class="col-xl-4 col-12">
 			<!--TODO: display artist name-->

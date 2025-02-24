@@ -2,7 +2,7 @@
 	@if(track) {
 		<div class="col-sm-6 col-12">
 			<!--TODO: populate with track name-->
-			<h1>???</h1>
+			<h1>{{ track.name }}</h1>
 			<p>
 				<!--TODO: link to album page, display album name-->
 				Track on <a>???</a>
@@ -20,7 +20,7 @@
 			</p>
 			<p>
 				<!--TODO: link to track page on spotify, display track name-->
-				<a class="btn btn-light" role="button" target="_blank">Open ??? on Spotify</a>
+				<a href]="track.url" class="btn btn-light" role="button" target="_blank">Open {{ track.name }} on Spotify</a>
 			</p>
 		</div>
 		<div class="col-sm-6 col-12">

@@ -16,7 +16,7 @@
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
-
+- how do naviate displaying and linking multiple artists when looping through album artists
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
