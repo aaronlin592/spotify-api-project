@@ -8,6 +8,9 @@
     <!--@for(; let first=$first) {
       <app-carousel-card class="carousel-item" [class.active]="first"></app-carousel-card>
     }-->
+    @for (resource of resources; track resource.id; let first = $first) {
+      <app-carousel-card class="carousel-item" [class.active]="first" [resource]="resource"></app-carousel-card>
+    }
   </div>
   <a class="carousel-control-prev" [attr.data-bs-target]="carouselIdForBinding" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
