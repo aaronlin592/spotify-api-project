@@ -5,26 +5,31 @@
 			<h1>{{ track.name }}</h1>
 			<p>
 				<!--TODO: link to album page, display album name-->
-				Track on <a>???</a>
+				Track on <a [routerLink]="['/album', track.album.id]" target="_blank">{{ track.album.name }}</a>
 			</p>
 			<div>
 				<!--TODO: loop over track's artists-->
 				<p>
 					<!--TODO: link to artist page, display artist name-->
-					Artist: <a>???</a>
+					Artist(s): 
+					<ng-container *ngFor="let artist of track.artists; let last = last">
+						<a [routerLink]="['/artist', artist.id]" target="_blank">{{ artist.name }}</a>
+						<span *ngIf="!last">, </span>
+					</ng-container>
 				</p>
 			</div>
 			<p>
 				<!--TODO: populate with track duration-->
-				Duration: ???
+				Duration: {{ track.durationStr }}
 			</p>
 			<p>
 				<!--TODO: link to track page on spotify, display track name-->
-				<a href]="track.url" class="btn btn-light" role="button" target="_blank">Open {{ track.name }} on Spotify</a>
+				<a [href]="track.url" class="btn btn-light" role="button" target="_blank">Open {{ track.name }} on Spotify</a>
 			</p>
 		</div>
 		<div class="col-sm-6 col-12">
 			<!--TODO: create a thermometer component with the track's popularity-->
+			<app-thermometer [popularity]="track.popularity"></app-thermometer>
 		</div>
 	}
 </div>
