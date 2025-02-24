@@ -18,19 +18,19 @@
                 <td>{{ i + 1 }}</td>
                 <td>
                     <!-- TODO: link to the endpoint for that track, display the track's name -->
-                    <a [routerLink]="['/', track.category, track.id]" target="_blank">{{ track.name }}</a>
+                    <a [routerLink]="['/', track.category, track.id]" class="text-primary" target="_blank">{{ track.name }}</a>
                 </td>
                 <!-- TODO: display the track's duration -->
                 <td>{{ track.durationStr }}</td>
                 <!-- TODO: Use @if to hide if hideArtist is true; link to the first artist's endpoint and display the first artist's name -->
                 <td *ngIf="!hideArtist">
-                    <a [routerLink]="['/artist', track.artists[0].id]" target="_blank">
+                    <a [routerLink]="['/artist', track.artists[0].id]" class="text-primary" target="_blank">
                         {{ track.artists[0]?.name }}
                     </a>
                 </td>
                 <!-- TODO: Use @if to hide if hideAlbum is true; link to the album's endpoint and display the album's name -->
                 <td *ngIf="!hideAlbum">
-                    <a [routerLink]="['/album', track.album.id]" target="_blank">
+                    <a [routerLink]="['/album', track.album.id]" class="text-primary" target="_blank">
                         {{ track.album?.name }}
                     </a>
                 </td>

@@ -5,7 +5,7 @@
 			<h1>{{ track.name }}</h1>
 			<p>
 				<!--TODO: link to album page, display album name-->
-				Track on <a [routerLink]="['/album', track.album.id]" target="_blank">{{ track.album.name }}</a>
+				Track on <a [routerLink]="['/album', track.album.id]" class="text-primary" target="_blank">{{ track.album.name }}</a>
 			</p>
 			<div>
 				<!--TODO: loop over track's artists-->
@@ -13,7 +13,7 @@
 					<!--TODO: link to artist page, display artist name-->
 					Artist(s): 
 					<ng-container *ngFor="let artist of track.artists; let last = last">
-						<a [routerLink]="['/artist', artist.id]" target="_blank">{{ artist.name }}</a>
+						<a [routerLink]="['/artist', artist.id]" class="text-primary" target="_blank">{{ artist.name }}</a>
 						<span *ngIf="!last">, </span>
 					</ng-container>
 				</p>

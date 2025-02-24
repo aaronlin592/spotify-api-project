@@ -12,7 +12,7 @@
 				Artist(s): 
 				@for (artist of album.artists; track artist.id; let i = $index) {
 					<!--TODO: link to artist page, display artist name-->
-					<a [href]="'/artist/' + artist.id" target="_blank">{{ artist.name }}</a>
+					<a [href]="'/artist/' + artist.id" class="text-primary" target="_blank">{{ artist.name }}</a>
 					@if (i < album.artists.length - 1) { , }
 				}
 			</p>
@@ -25,8 +25,7 @@
 		<div class="col-12 col-sm-6">
 			<h3>Album Tracks</h3>
 			<!--TODO: display the track list for the album. Hide the artist and album columns because they are redundant on this page.-->
-			<app-track-list 
-			*ngIf="album?.tracks" 
+			<app-track-list
 				[tracks]="tracks"
 				[hideArtist]="true" 
 				[hideAlbum]="true">
