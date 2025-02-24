@@ -25,7 +25,7 @@ export class AboutComponent implements OnInit {
   getAboutMe() {
     this.spotifyService.aboutMe().then((profile: ProfileData) => {
       this.name = profile.name;
-      this.profile_pic = profile.imageURL || 'assets/unknown.jpg'; // Fallback if no image
+      this.profile_pic = profile.imageURL || 'assets/unknown.jpg'; // fallback if there is no image
       this.profile_link = profile.spotifyProfile;
     }).catch((error) => {
       console.error("Error fetching profile:", error);
