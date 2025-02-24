@@ -26,8 +26,8 @@
 			<h3>Album Tracks</h3>
 			<!--TODO: display the track list for the album. Hide the artist and album columns because they are redundant on this page.-->
 			<app-track-list 
-			*ngIf="album?.tracks?.length" 
-				[tracks]="album.tracks" 
+			*ngIf="album?.tracks" 
+				[tracks]="tracks"
 				[hideArtist]="true" 
 				[hideAlbum]="true">
 			</app-track-list>

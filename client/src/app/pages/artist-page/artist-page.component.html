@@ -18,14 +18,14 @@
 			<!--TODO: display artist name-->
 			<h3>{{ artist.name }}'s Albums</h3>
 			<!--TODO: Display a carousel component for the artist's albums. Bind carousel's resources and give it a static carouselId.-->
-			<app-carousel [resources]="artist" [carouselId]="'artist-album-carousel'"></app-carousel>
+			<app-carousel [resources]="albums" [carouselId]="'artist-album-carousel'"></app-carousel>
 
 		</div>
 		<div class="col-xl-4 col-12">
 			<!--TODO: display artist name-->
 			<h3>{{ artist.name }}'s Top Tracks</h3>
 			<!--TODO: display the artist's top tracks-->
-			<app-track-list [tracks]="artist.topTracks"></app-track-list>
+			<app-track-list [tracks]="topTracks"></app-track-list>
 		</div>
 	</div>
 }
