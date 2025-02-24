@@ -1,6 +1,6 @@
 <h1>Search Spotify</h1>
 <!--TODO: bind input's model to searchString-->
-<input [(ngModel)]="searchString" placeholder="Search">
+<input [(ngModel)]="searchString" (keyup.enter)="search()" placeholder="Search">
 <!--TODO: bind select's model to searchCategory-->
 <select [(ngModel)]="searchCategory" (change)="resetSearch()">
 	<!--TODO: loop over searchCategories to create dropdown options-->
@@ -17,11 +17,12 @@
   <div id="searchCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 600px;">
     <div class="carousel-inner">
       <div *ngFor="let resource of resources; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
-        <img [src]="resource.imageURL" class="d-block w-100" alt="{{ resource.name }}" style="height: 600px; object-fit: cover;">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{ resource.name }}</h5>
-          <a [href]="['/../../artist-page/artist-page.component.html']" target="_blank" class="btn btn-primary" [artist]="resource.name">Open in Spotify</a>
-        </div>
+        <a [routerLink]="['REPLACE WITH SEARCH CATEGORY ROUTERLINK']" target="_blank" style="text-decoration: none; color: inherit;">
+          <img [src]="resource.imageURL" class="d-block w-100" alt="{{ resource.name }}" style="height: 600px; object-fit: cover;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{ resource.name }}</h5>
+          </div>
+        </a>
       </div>
     </div>
 
