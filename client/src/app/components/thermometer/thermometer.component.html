@@ -1,6 +1,6 @@
 <div class="progress">
 	<!--TODO: set style.background-color based on the level of popularity and style.width via the popularity's percent. Display percent.-->
-  <div class="progress-bar" role="progressbar">
-  	<span class="progress-bar-text">???: ???</span>
+  <div class="progress-bar" role="progressbar" [style.width]="popularity.percentageString" [style.backgroundColor]="popularity.color">
+  	<span class="progress-bar-text">Popularity: {{ popularity.percentageString }}</span>
   </div>
 </div>
