@@ -2,21 +2,22 @@
 
 ## Description
 
-This project interacts with the Spotify Web API to [briefly describe the main functionality of your project].
+This project interacts with the Spotify Web API to display results from from user inputs/search queries about anything (e.g. music tracks, artists, albums) in the Spotify Library. This is a project that I did to practice API calls and requests and communication between the client and the webserver.
 
 ## Features
 
 - **User Authentication**: Securely authenticate users using OAuth to access their Spotify data.
-- **User Profile Information**: Retrieve and display user profile details such as display name, followers, and profile images.
-- **Search Functionality**: Allow users to search for tracks, artists, albums, and playlists.
+- **User Profile Information**: Retrieve and display user profile details like display name and profile images.
+- **Search Functionality**: Allow users to search for tracks, artists, and albums.
 - **Artist Details**: Display detailed information about artists, including top tracks and related artists.
 - **Album Details**: Show album information along with track listings.
 - **Track Details**: Provide detailed information about individual tracks.
+- **Open in Spotify**: Users can open their search results in Spotify via "Open in Spotify" Button.
 
-## Technologies Used
+## Tech Stack
 
-- **Frontend**: Angular for building a dynamic and responsive user interface.
-- **Backend**: Node.js and Express.js to handle API requests and serve the frontend.
+- **Frontend**: Angular/Bootstrap in HTML/CSS for building the UI.
+- **Backend**: Node.js/Express.js in TypeScript to handle API requests and serve the frontend.
 - **Spotify Web API**: To fetch data related to users, tracks, artists, and more.
 
 ## Setup Instructions
@@ -70,11 +71,3 @@ This project interacts with the Spotify Web API to [briefly describe the main fu
 
     - Navigate to `http://localhost:4200` in your web browser.
 
-## Acknowledgements
-
-- [Spotify Web API Examples](https://github.com/spotify/web-api-examples) for providing foundational examples of Spotify API integration.
-- [SpotifyAPI-NET](https://github.com/JohnnyCrazy/SpotifyAPI-NET) for insights into .NET integrations with Spotify.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
